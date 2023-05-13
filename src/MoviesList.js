@@ -26,14 +26,14 @@ const MovieList = () => {
               <div className="renderMovies">
                 <RenderListOfMovies item={item} index={index} />
                 <div className="buttonToAdd">
-                <button
-                className="addingMovie"
-                  onClick={(event) => {
-                    setStoreData([...storeData, item]);
-                  }}
-                >
-                  Add To Queue
-                </button>
+                  <button
+                    className="addingMovie"
+                    onClick={(event) => {
+                      setStoreData([...storeData, item]);
+                    }}
+                  >
+                    Add To Queue
+                  </button>
                 </div>
               </div>
             );

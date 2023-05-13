@@ -6,7 +6,9 @@ const RenderListOfMovies = ({ item, key }) => {
   return (
     <div className="ChildRenderMovie">
       <div className="movieTitle">{item.Title}</div>
-      <div className="imageOfMovie"><img src={item.Poster} alt={item.Title} width="100%" height="400" /></div>
+      <div className="imageOfMovie">
+        <img src={item.Poster} alt={item.Title} width="100%" height="400" />
+      </div>
       <div className="buttonStar">
         <button
           className="buttonIncDec"

@@ -10,7 +10,6 @@ const CustomList = ({ data, setStoreData }) => {
     <>
       <div className="customList">
         <div className="textList">My Queue</div>
-
         <div className="customListOfMovies">
           {data &&
             data.map((item, ind) => {
