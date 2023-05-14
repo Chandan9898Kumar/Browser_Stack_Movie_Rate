@@ -38,9 +38,12 @@ const MovieList = () => {
               </div>
             );
           })}
+          <br />
+        <div className="customMovieList">
         {storeData && storeData.length > 0 && (
           <CustomList data={storeData} setStoreData={setStoreData} />
         )}
+        </div>
       </div>
     </>
   );

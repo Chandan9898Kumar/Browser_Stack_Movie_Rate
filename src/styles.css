@@ -1,6 +1,12 @@
 * {
   box-sizing: border-box;
 }
+.movieHeading {
+  display: block;
+  text-align: center;
+  font-size: 40px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -19,7 +25,7 @@
 }
 .buttonOnDiv {
   display: block;
-  margin-left: 40%;
+  margin-left: 35%;
   position: absolute;
   bottom: 10px;
 }
@@ -57,9 +63,9 @@
   border: 1px solid #ccc;
   margin-bottom: 10px;
 }
-.ChildRenderMovie{
-    display: block;
-    width: 100%;
+.ChildRenderMovie {
+  display: block;
+  width: 100%;
 }
 .movieTitle {
   font-size: 20px;
@@ -67,7 +73,7 @@
 }
 
 .imageOfMovie {
-  width: inherit
+  width: inherit;
 }
 
 img {
@@ -102,4 +108,48 @@ img {
   font-size: larger;
   font-weight: bolder;
   cursor: pointer;
+}
+
+.customMovieList {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.textList {
+  font-size: 25px;
+  text-align: center;
+  border: 1px solid;
+}
+.MovieTitles {
+  text-align: center;
+  font-size: 25px;
+}
+.customListOfMovies {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.imagesOfMovie {
+  border: 1px solid #ccc;
+  width: 30%;
+}
+
+.myMovieImage {
+  width: 100%;
+}
+
+.removeButton {
+  width: 120px;
+  height: 35px;
+  position: relative;
+  left: 130px;
+  bottom: 2px;
+  cursor: pointer;
+  font-size: 25px;
+  text-align: center;
 }

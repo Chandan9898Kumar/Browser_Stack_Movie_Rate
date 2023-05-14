@@ -8,30 +8,33 @@ const CustomList = ({ data, setStoreData }) => {
   };
   return (
     <>
-      <div className="customList">
         <div className="textList">My Queue</div>
         <div className="customListOfMovies">
           {data &&
             data.map((item, ind) => {
               return (
-                <div key={ind}>
-                  <div>{item.Title}</div>
+                <div
+                className="imagesOfMovie"
+                  key={ind}>
+                  <div className="MovieTitles">{item.Title.slice(0,20)}</div>
                   <img
+                  className="myMovieImage"
                     src={item.Poster}
                     alt={item.Title}
                     width="60%"
                     height="50%"
                   />
                   <div>
-                    <button onClick={(event) => handleRemoveItems(event, ind)}>
-                      Remove
+                    <button
+                    className="removeButton"
+                    onClick={(event) => handleRemoveItems(event, ind)}>
+                    Remove
                     </button>
                   </div>
                 </div>
               );
             })}
         </div>
-      </div>
     </>
   );
 };

@@ -4,7 +4,6 @@ import MovieList from "./MoviesList";
 export default function App() {
   const [condition, setCondition] = useState(false);
   return (
-    
     <div className={!condition ? "App" : "AppTwo"}>
       {!condition && (
         <div className={"buttonOnDiv"}>
@@ -18,6 +17,9 @@ export default function App() {
           </button>
         </div>
       )}
+      <div
+      className="movieHeading"
+      >Welcome to Movie Zone</div>
       {condition && <MovieList />}
     </div>
   );
