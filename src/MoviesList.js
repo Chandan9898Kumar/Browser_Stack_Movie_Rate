@@ -18,34 +18,31 @@ const MovieList = () => {
   };
 
   return (
-    <>
-      <div className="headContainer">
-        {listOfMovies &&
-          listOfMovies.map((item, index) => {
-            return (
-              <div className="renderMovies">
-                <RenderListOfMovies item={item} index={index} />
-                <div className="buttonToAdd">
-                  <button
-                    className="addingMovie"
-                    onClick={(event) => {
-                      setStoreData([...storeData, item]);
-                    }}
-                  >
-                    Add To Queue
-                  </button>
+    (
+      <>
+        <div className="headContainer">
+          {listOfMovies &&
+            listOfMovies.map((item, index) => {
+              return (
+                <div className="renderMovies">
+                  <RenderListOfMovies
+                    item={item}
+                    index={index}
+                    storeData={storeData}
+                    setStoreData={setStoreData}
+                  />
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
           <br />
-        <div className="customMovieList">
-        {storeData && storeData.length > 0 && (
-          <CustomList data={storeData} setStoreData={setStoreData} />
-        )}
+          <div className="customMovieList">
+            {storeData && storeData.length > 0 && (
+              <CustomList data={storeData} setStoreData={setStoreData} />
+            )}
+          </div>
         </div>
-      </div>
-    </>
+      </>
+    )
   );
 };
 export default MovieList;

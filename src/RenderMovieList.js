@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
-const RenderListOfMovies = ({ item, key }) => {
+const RenderListOfMovies = ({ item, key, storeData, setStoreData }) => {
   const [count, setCount] = useState(0);
 
   return (
@@ -9,6 +9,7 @@ const RenderListOfMovies = ({ item, key }) => {
       <div className="imageOfMovie">
         <img src={item.Poster} alt={item.Title} width="100%" height="400" />
       </div>
+
       <div className="buttonStar">
         <button
           className="buttonIncDec"
@@ -35,6 +36,18 @@ const RenderListOfMovies = ({ item, key }) => {
         >
           +
         </button>
+      </div>
+      <div>
+        <div className="buttonToAdd">
+          <button
+            className="addingMovie"
+            onClick={(event) => {
+              setStoreData([...storeData, { ...item, starCount: count }]);
+            }}
+          >
+            Add To Queue
+          </button>
+        </div>
       </div>
     </div>
   );
