@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, memo } from "react";
 import "./styles.css";
 const RenderListOfMovies = ({ item, key, storeData, setStoreData }) => {
   const [count, setCount] = useState(0);
@@ -40,9 +40,13 @@ const RenderListOfMovies = ({ item, key, storeData, setStoreData }) => {
       <div>
         <div className="buttonToAdd">
           <button
+            disabled={""}
             className="addingMovie"
             onClick={(event) => {
-              setStoreData([...storeData, { ...item, starCount: count }]);
+              setStoreData([
+                ...storeData,
+                { ...item, starCount: count, disabled: true },
+              ]);
             }}
           >
             Add To Queue
@@ -52,4 +56,4 @@ const RenderListOfMovies = ({ item, key, storeData, setStoreData }) => {
     </div>
   );
 };
-export default RenderListOfMovies;
+export default memo(RenderListOfMovies);

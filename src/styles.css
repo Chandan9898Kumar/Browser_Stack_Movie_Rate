@@ -159,3 +159,17 @@ img {
   position: relative;
   left: 150px;
 }
+@media all and (min-width: 400px) {
+  .App {
+    margin: auto;
+    left: 0;
+    display: block;
+    overflow: hidden;
+  }
+  .buttonOnDiv {
+    display: block;
+    margin-left: 32%;
+    position: absolute;
+    bottom: 10px;
+  }
+}

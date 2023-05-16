@@ -1,6 +1,7 @@
-import React from "react";
+import React,{memo} from "react";
 
 const CustomList = ({ data, setStoreData }) => {
+  
   const handleRemoveItems = (event, ind) => {
     event.preventDefault();
     let removedData = data.filter((item, index) => index !== ind);
@@ -12,7 +13,6 @@ const CustomList = ({ data, setStoreData }) => {
       <div className="customListOfMovies">
         {data &&
           data.map((item, ind) => {
-            console.log(item, "item.startCount", item.starCount);
             return (
               <div className="imagesOfMovie" key={ind}>
                 <div className="MovieTitles">{item.Title.slice(0, 20)}</div>
@@ -43,4 +43,4 @@ const CustomList = ({ data, setStoreData }) => {
     </>
   );
 };
-export default CustomList;
+export default memo(CustomList);
