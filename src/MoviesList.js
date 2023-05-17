@@ -14,35 +14,46 @@ const MovieList = () => {
   const fetchData = () => {
     fetch(URL)
       .then((response) => response.json())
-      .then((result) => setListOfMovies(result.Search));
+      .then((result) =>
+        setListOfMovies(
+          result.Search.map((item) => {
+            return { ...item, disabled: false };
+          })
+        )
+      );
   };
 
   return (
-    (
-      <>
-        <div className="headContainer">
-          {listOfMovies &&
-            listOfMovies.map((item, index) => {
-              return (
-                <div className="renderMovies">
-                  <RenderListOfMovies
-                    item={item}
-                    index={index}
-                    storeData={storeData}
-                    setStoreData={setStoreData}
-                  />
-                </div>
-              );
-            })}
-          <br />
-          <div className="customMovieList">
-            {storeData && storeData.length > 0 && (
-              <CustomList data={storeData} setStoreData={setStoreData} />
-            )}
-          </div>
+    <>
+      <div className="headContainer">
+        {listOfMovies &&
+          listOfMovies.map((item, index) => {
+            return (
+              <div className="renderMovies">
+                <RenderListOfMovies
+                  item={item}
+                  index={index}
+                  storeData={storeData}
+                  setStoreData={setStoreData}
+                  listOfMovies={listOfMovies}
+                  setListOfMovies={setListOfMovies}
+                />
+              </div>
+            );
+          })}
+        <br />
+        <div className="customMovieList">
+          {storeData && storeData.length > 0 && (
+            <CustomList
+              data={storeData}
+              setStoreData={setStoreData}
+              listOfMovies={listOfMovies}
+              setListOfMovies={setListOfMovies}
+            />
+          )}
         </div>
-      </>
-    )
+      </div>
+    </>
   );
 };
 export default MovieList;

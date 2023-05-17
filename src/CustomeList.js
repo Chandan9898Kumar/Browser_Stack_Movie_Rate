@@ -1,11 +1,25 @@
-import React,{memo} from "react";
+import React, { memo } from "react";
 
-const CustomList = ({ data, setStoreData }) => {
-  
+const CustomList = ({ data, setStoreData, listOfMovies, setListOfMovies }) => {
   const handleRemoveItems = (event, ind) => {
     event.preventDefault();
     let removedData = data.filter((item, index) => index !== ind);
     setStoreData(removedData);
+
+    // if(removedData&&removedData.length===0){
+    //   return
+    // }
+    // let s=listOfMovies.map((item)=>{
+    //   return removedData.map((removeItem)=>{
+    //     if (item.imdbID !== removeItem.imdbID) {
+    //       return { ...item, disabled: false };
+    //     }
+    //     return item;
+    //   })
+
+    // })
+    // console.log(s,'array >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+    // // setListOfMovies(array)
   };
   return (
     <>
@@ -31,7 +45,9 @@ const CustomList = ({ data, setStoreData }) => {
                 <div>
                   <button
                     className="removeButton"
-                    onClick={(event) => handleRemoveItems(event, ind)}
+                    onClick={(event) => {
+                      handleRemoveItems(event, ind);
+                    }}
                   >
                     Remove
                   </button>

@@ -7,6 +7,25 @@
   font-size: 40px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+
+@keyframes movieImagePage {
+  from {
+    transform: translate(0px);
+  }
+  to {
+    transform: translate(100px);
+  }
+}
+.movieImage img {
+  border-radius: 50%;
+  margin: auto;
+  transition: 2s all;
+  animation: movieImagePage 2s infinite linear;
+  animation-direction: alternate;
+}
+.movieImage img:hover {
+  opacity: 0.5;
+}
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -165,11 +184,15 @@ img {
     left: 0;
     display: block;
     overflow: hidden;
+    height: 400px;
   }
   .buttonOnDiv {
     display: block;
     margin-left: 32%;
     position: absolute;
     bottom: 10px;
+  }
+  .movieImage img {
+    margin-top: 20px;
   }
 }

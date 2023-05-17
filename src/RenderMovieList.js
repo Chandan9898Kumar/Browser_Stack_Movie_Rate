@@ -1,6 +1,13 @@
-import React, { useState, useEffect, memo } from "react";
+import React, { useState, memo } from "react";
 import "./styles.css";
-const RenderListOfMovies = ({ item, key, storeData, setStoreData }) => {
+const RenderListOfMovies = ({
+  item,
+  key,
+  storeData,
+  setStoreData,
+  listOfMovies,
+  setListOfMovies,
+}) => {
   const [count, setCount] = useState(0);
 
   return (
@@ -40,9 +47,17 @@ const RenderListOfMovies = ({ item, key, storeData, setStoreData }) => {
       <div>
         <div className="buttonToAdd">
           <button
-            disabled={""}
+            disabled={item.disabled}
             className="addingMovie"
             onClick={(event) => {
+              setListOfMovies(
+                listOfMovies.map((itemNew, id) => {
+                  if (itemNew.imdbID === item.imdbID) {
+                    return { ...itemNew, disabled: true };
+                  }
+                  return itemNew;
+                })
+              );
               setStoreData([
                 ...storeData,
                 { ...item, starCount: count, disabled: true },
