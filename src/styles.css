@@ -13,7 +13,7 @@
     transform: translate(0px);
   }
   to {
-    transform: translate(100px);
+    transform: translate(50px);
   }
 }
 .movieImage img {
@@ -185,6 +185,7 @@ img {
     display: block;
     overflow: hidden;
     height: 400px;
+    width: 60%;
   }
   .buttonOnDiv {
     display: block;
@@ -192,7 +193,25 @@ img {
     position: absolute;
     bottom: 10px;
   }
+  .movieImage {
+    display: block;
+    overflow: hidden;
+  }
   .movieImage img {
     margin-top: 20px;
+  }
+
+  .removeButton {
+    width: 120px;
+    height: 35px;
+    position: relative;
+    bottom: 2px;
+    cursor: pointer;
+    font-size: 25px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    left: 0px;
   }
 }

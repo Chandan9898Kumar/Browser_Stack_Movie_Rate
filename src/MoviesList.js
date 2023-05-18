@@ -45,7 +45,7 @@ const MovieList = () => {
         <div className="customMovieList">
           {storeData && storeData.length > 0 && (
             <CustomList
-              data={storeData}
+              storeData={storeData}
               setStoreData={setStoreData}
               listOfMovies={listOfMovies}
               setListOfMovies={setListOfMovies}
