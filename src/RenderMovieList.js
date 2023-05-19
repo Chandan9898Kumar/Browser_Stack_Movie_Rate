@@ -2,7 +2,6 @@ import React, { useState, memo } from "react";
 import "./styles.css";
 const RenderListOfMovies = ({
   item,
-  key,
   storeData,
   setStoreData,
   listOfMovies,
@@ -58,10 +57,7 @@ const RenderListOfMovies = ({
                   return itemNew;
                 })
               );
-              setStoreData([
-                ...storeData,
-                { ...item, starCount: count, disabled: true },
-              ]);
+              setStoreData([...storeData, { ...item, starCount: count }]);
             }}
           >
             Add To Queue

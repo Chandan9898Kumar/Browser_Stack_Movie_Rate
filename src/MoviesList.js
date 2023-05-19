@@ -7,6 +7,7 @@ const URL = "https://www.omdbapi.com/?s=action&apikey=4640ef30&page=1";
 const MovieList = () => {
   const [listOfMovies, setListOfMovies] = useState([]);
   const [storeData, setStoreData] = useState([]);
+  let [newListOfMovies, setNewListOfMovies] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
@@ -14,13 +15,18 @@ const MovieList = () => {
   const fetchData = () => {
     fetch(URL)
       .then((response) => response.json())
-      .then((result) =>
+      .then((result) => {
+        setNewListOfMovies(
+          result.Search.map((item) => {
+            return { ...item, disabled: false };
+          })
+        );
         setListOfMovies(
           result.Search.map((item) => {
             return { ...item, disabled: false };
           })
-        )
-      );
+        );
+      });
   };
 
   return (
@@ -49,6 +55,7 @@ const MovieList = () => {
               setStoreData={setStoreData}
               listOfMovies={listOfMovies}
               setListOfMovies={setListOfMovies}
+              newListOfMovies={newListOfMovies}
             />
           )}
         </div>
